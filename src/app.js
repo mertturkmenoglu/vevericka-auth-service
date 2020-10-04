@@ -21,6 +21,13 @@ mongoose.connect(process.env.DB_CONNECTION, MONGOOSE_OPTIONS, () => {
 });
 
 
+app.get('/', (req, res) => {
+    return res.json({
+        message: 'Vevericka Auth Service: GET /'
+    })
+});
+
+
 app.use('/auth', authRoute);
 app.use('/posts', postsRoute);
 
