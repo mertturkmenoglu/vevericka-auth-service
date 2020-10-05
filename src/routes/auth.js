@@ -80,7 +80,12 @@ router.post('/login', async (req, res) => {
 
 	return res.header('auth-token', token).json({
 		message: 'Login success',
-		token
+		user: {
+			name: user.name,
+			username: user.username,
+			email: user.email,
+			token: token,
+		}
 	});
 });
 
