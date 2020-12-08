@@ -4,6 +4,10 @@ const mongoose = require('mongoose');
 describe('loadExpress', () => {
     let server
 
+    before(() => {
+        process.env.NODE_ENV = 'test'
+    })
+
     beforeEach(() => {
         delete require.cache[require.resolve('./app')];
         server = require('./app')
@@ -11,8 +15,8 @@ describe('loadExpress', () => {
 
     afterEach((done) => {
         try {
-            server.close(done)
             mongoose.connection.close()
+            server.close(done)
         } catch (e) {
             console.error(e)
         }

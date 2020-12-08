@@ -14,8 +14,12 @@ app.use(morgan('[:date[web]] || :method :url  || Status: :status || Response tim
 app.use(cors())
 
 const MONGOOSE_OPTIONS = { useNewUrlParser: true, useUnifiedTopology: true };
-mongoose.connect(process.env.DB_CONNECTION, MONGOOSE_OPTIONS, () => {
-    console.log('Connected to MongoDB database');
+const DB = process.env.NODE_ENV === 'production'
+    ? process.env.DB_CONNECTION
+    : process.env.DB_TEST_CONNECTION
+
+mongoose.connect(DB, MONGOOSE_OPTIONS, () => {
+    console.log(`Connected to MongoDB database. Node environment: ${process.env.NODE_ENV}`);
 });
 
 app.get('/api', (req, res) => {
