@@ -35,8 +35,13 @@ app.get('/api', (req, res) => {
 app.use('/auth', authRoute);
 app.use('/posts', postsRoute);
 
+app.get('*', (req, res) => {
+    res.status(404).send('Not found')
+})
 
 const PORT = process.env.PORT || 4545;
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
     console.log(`Server started listening at port ${PORT}`);
 });
+
+module.exports = server

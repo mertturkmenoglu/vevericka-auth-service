@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/app.js",
-    "dev": "nodemon src/app.js"
+    "dev": "nodemon src/app.js",
+    "test:unit": "mocha src/**/*.test.js",
+    "test": "npm run test:unit"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +25,9 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1",
+    "nodemon": "^2.0.4",
+    "supertest": "^6.0.1"
   }
 }

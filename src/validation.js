@@ -14,15 +14,11 @@ const loginSchema = Joi.object({
 
 const registerValidation = (data) => {
 	const { error } = registerSchema.validate(data);
-
-	if (error) console.log(error);
-
 	return !error;
 }
 
 const loginValidation = (data) => {
 	const { error } = loginSchema.validate(data);
-
 	return !error
 }
 
