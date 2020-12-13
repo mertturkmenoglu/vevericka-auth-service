@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
-const User = require('./User');
+const User = require('../../../src/models/User');
 
-describe('User', function() {
+describe('User Model Unit Tests', function() {
     it('Should be invalid if parameter is undefined', (done) => {
         const user = new User()
 

@@ -1,25 +1,20 @@
 const request = require('supertest')
-const mongoose = require('mongoose');
+let server
 
-describe('loadExpress', () => {
-    let server
-
+describe('Server Main File Integration Tests', () => {
     before(() => {
         process.env.NODE_ENV = 'test'
     })
 
     beforeEach(() => {
-        delete require.cache[require.resolve('./app')];
-        server = require('./app')
+        server = require('../../src/app')
     })
 
-    afterEach((done) => {
-        try {
-            mongoose.connection.close()
-            server.close(done)
-        } catch (e) {
-            console.error(e)
-        }
+    afterEach(done => {
+        server.close( () => {
+            delete require.cache[require.resolve( '../../src/app' )]
+            done()
+        })
     })
 
     it('Response to /api', (done) => {

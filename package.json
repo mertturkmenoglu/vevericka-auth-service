@@ -6,8 +6,9 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
-    "test:unit": "mocha src/**/*.test.js",
-    "test": "npm run test:unit"
+    "test:unit": "mocha test/unit/**/*.test.js",
+    "test:integration": "mocha --exit test/integration/**/*.test.js",
+    "test": "npm run test:unit && npm run test:integration"
   },
   "keywords": [],
   "author": "",

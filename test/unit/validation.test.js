@@ -1,7 +1,7 @@
 const should = require('chai').should()
 
-describe('validation', () => {
-    const registerValidation = require('./validation').registerValidation
+describe('Register Validation', () => {
+    const registerValidation = require('../../src/validation').registerValidation
     let data
 
     beforeEach(() => {
@@ -35,8 +35,8 @@ describe('validation', () => {
     })
 })
 
-describe('loginValidation', () => {
-    const loginValidation = require('./validation').loginValidation
+describe('Login Validation', () => {
+    const loginValidation = require('../../src/validation').loginValidation
     let data
 
     beforeEach(() => {
