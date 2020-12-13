@@ -4,7 +4,7 @@ const expect = chai.expect
 const mockList = require('../../mocks/invalidRegisterMock.json')
 let server
 
-describe('User Controller Integration Tests', () => {
+describe('Auth Controller Integration Tests', () => {
     before(() => {
         process.env.NODE_ENV = 'test'
     })
