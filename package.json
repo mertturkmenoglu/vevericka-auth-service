@@ -8,7 +8,9 @@
     "dev": "nodemon src/app.js",
     "test:unit": "mocha test/unit/**/*.test.js",
     "test:integration": "mocha --exit test/integration/**/*.test.js",
-    "test": "npm run test:unit && npm run test:integration"
+    "test": "npm run test:unit && npm run test:integration",
+    "coverage:text": "nyc npm run test:unit",
+    "coverage:html": "nyc --reporter=html npm run test:unit"
   },
   "keywords": [],
   "author": "",
@@ -29,6 +31,7 @@
     "chai": "^4.2.0",
     "mocha": "^8.2.1",
     "nodemon": "^2.0.4",
+    "nyc": "^15.1.0",
     "sinon": "^9.2.1",
     "supertest": "^6.0.1"
   }
