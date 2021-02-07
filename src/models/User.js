@@ -24,6 +24,10 @@ const userSchema = new mongoose.Schema({
 		minLength: 8,
 		maxLength: 1024,
 	},
+	is_admin: {
+		type: Boolean,
+		default: false,
+	},
 	create_date: {
 		type: Date,
 		default: Date.now

@@ -17,9 +17,9 @@ describe('Server Main File Integration Tests', () => {
         })
     })
 
-    it('Response to /api', (done) => {
+    it('Response to /services', (done) => {
         request(server)
-            .get('/api')
+            .get('/services')
             .set('Content-Type', 'application/json')
             .expect('Content-Type', /json/)
             .expect(200, done)
