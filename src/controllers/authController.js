@@ -31,6 +31,7 @@ const register = async (req, res) => {
         username: req.body.username,
         name: req.body.name,
         email: req.body.email,
+        is_admin: false,
         password: hashed
     });
 
@@ -94,6 +95,7 @@ const login = async (req, res) => {
             name: user.name,
             username: user.username,
             email: user.email,
+            is_admin: user.is_admin,
             token: token,
         }
     });
