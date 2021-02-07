@@ -6,6 +6,16 @@ const { registerValidation, loginValidation } = require('../validation');
 const sgMail = require('@sendgrid/mail')
 
 const register = async (req, res) => {
+    /**
+     * TEMPORARILY DISABLE REGISTER SERVICE
+     */
+    const DISABLE = true;
+    if (DISABLE) {
+        return res.status(500).json({
+            message: "Registration is not available"
+        })
+    }
+
     const isValid = registerValidation(req.body);
 
     if (!isValid) {
